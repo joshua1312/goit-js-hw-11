@@ -17,6 +17,7 @@
 }
 
 .container {
+  padding-top: 36px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,13 +28,14 @@
 #search-form {
   display: flex;
   gap: 8px;
+  width: 371px;
+  height: 40px;
 }
 
 #search-input {
   border: 1px solid #808080;
   border-radius: 4px;
-  width: 272px;
-  height: 40px;
+
   padding: 8px 16px;
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
@@ -72,31 +74,18 @@ button[type='submit']:hover {
 }
 
 .loader {
+  margin: 0 auto;
   width: 48px;
   height: 48px;
-  border-radius: 50%;
-  position: relative;
-  animation: rotate 1s linear infinite;
-}
-
-.loader::before,
-.loader::after {
-  content: '';
-  box-sizing: border-box;
-  position: absolute;
-  inset: 0px;
-  border-radius: 50%;
   border: 5px solid #fff;
-  animation: prixClipFix 2s linear infinite;
+  border-bottom-color: #1c07da;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
 }
 
-.loader::after {
-  border-color: #ff3d00;
-  animation: prixClipFix 2s linear infinite, rotate 0.5s linear infinite reverse;
-  inset: 6px;
-}
-
-@keyframes rotate {
+@keyframes rotation {
   0% {
     transform: rotate(0deg);
   }
@@ -106,38 +95,16 @@ button[type='submit']:hover {
   }
 }
 
-@keyframes prixClipFix {
-  0% {
-    clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0);
-  }
-
-  25% {
-    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0);
-  }
-
-  50% {
-    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%);
-  }
-
-  75% {
-    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%);
-  }
-
-  100% {
-    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 0);
-  }
-}
-
 .gallery {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 24px;
-  justify-content: center;
   align-items: center;
 }
 
 .card {
-  width: calc((100% - 48px) / 3);
+  width: 360px;
   border: 1px solid #808080;
   height: 200px;
 }
@@ -145,27 +112,27 @@ button[type='submit']:hover {
 .card img {
   max-height: 152px;
   width: 100%;
-  object-fit: cover;
   object-position: center;
+  object-fit: cover;
 }
 
 .info-list {
   display: flex;
+  height: 50px;
   align-items: center;
+  padding-bottom: 4px;
   justify-content: space-around;
   text-align: center;
   padding-top: 4px;
-  padding-bottom: 4px;
-  height: 50px;
 }
 
 .info-title,
 .info-data {
   font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
+  letter-spacing: 0.04em;
   font-size: 12px;
   line-height: 1.33;
-  letter-spacing: 0.04em;
+  font-weight: 600;
   color: #2e2f42;
 }
 
